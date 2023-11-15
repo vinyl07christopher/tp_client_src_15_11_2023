@@ -48,7 +48,7 @@ const SignUp = () => {
     };
 
     try {
-      const response = await axios.post("/api/signup", formData);
+      const response = await axios.post("https://api.tpdetector.com/api/signup", formData);
 
       alert("Form submitted successfully!");
 

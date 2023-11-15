@@ -24,10 +24,10 @@ const Dashboard = () => {
       try {
         const accessToken = localStorage.getItem("token");
         if (!accessToken) {
-          window.location.href = "/";      
-          }
+          window.location.href = "/";
+        }
 
-        const response = await axios.get("/api/users", {
+        const response = await axios.get("https://api.tpdetector.com/api/users", {
           headers: {
             Authorization: `Bearer ${accessToken}`,
           },
@@ -45,7 +45,7 @@ const Dashboard = () => {
   const containerStyle = {
     display: "flex",
     flexWrap: "wrap",
-    gap: "20px" ,
+    gap: "20px",
     justifyContent: "center",
   };
 
@@ -68,19 +68,17 @@ const Dashboard = () => {
         Logout
       </button>
       <br /> <br />
-      <h4 onClick={toggleHome}>
-        {homeEnabled ? 'Home' : 'Home'}
-      </h4>
+      <h4 onClick={toggleHome}>{homeEnabled ? "Home" : "Home"}</h4>
       {homeEnabled && (
         <div style={containerStyle}>
-          <Card style={{ width: '15rem' }}>
+          <Card style={{ width: "15rem" }}>
             <Card.Body>
               <Card.Title>Total Words</Card.Title>
               <Card.Text>4,000</Card.Text>
             </Card.Body>
           </Card>
 
-          <Card style={{ width: '15rem' }}>
+          <Card style={{ width: "15rem" }}>
             <Card.Body>
               <Card.Title>Used Words</Card.Title>
               <Card.Text>0</Card.Text>

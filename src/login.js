@@ -48,7 +48,7 @@ function Login() {
       password: password,
     };
     try {
-      const response = await axios.post("/api/login", loginData);
+      const response = await axios.post("https://api.tpdetector.com/api/login", loginData);
 
       const { token } = response.data;
 
@@ -59,7 +59,7 @@ function Login() {
       setPassword("");
 
       axios
-        .get("/api/user", {
+        .get("https://api.tpdetector.com/api/user", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -110,12 +110,7 @@ function Login() {
           </Button>
         </span>
         <br />
-        <Button
-          type="submit"
-          variant="contained"
-          color="primary"
-          className={classes.button}
-        >
+        <Button type="submit" variant="contained" color="primary" className={classes.button}>
           Login
         </Button>{" "}
         <br />
