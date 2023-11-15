@@ -1,0 +1,20 @@
+.sign-up-container {
+  max-width: 400px; 
+  margin: 0 auto;
+  padding: 20px; 
+  .form-label {
+    font-weight: bold;
+  }
+  .form-group {
+    margin-bottom: 20px;
+    
+  }
+  #formShowPassword {
+    margin-top: 10px;
+  }
+  @media (max-width: 576px) {
+    .sign-up-container {
+      padding: 10px;
+    }
+  }
+}
